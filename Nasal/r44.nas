@@ -27,6 +27,53 @@ setlistener("/sim/signals/fdm-initialized", func {
     settimer(update_systems,2);
     setprop("sim/model/sound/volume", 0.5);
     setprop("/instrumentation/doors/Rcrew/position-norm",1);
+    
+    # COMM1 (according to its documentation)
+aircraft.data.add(
+    "instrumentation/comm[0]/power-btn",
+    "instrumentation/comm[0]/volume",
+    "instrumentation/comm[0]/frequencies/selected-mhz",
+    "instrumentation/comm[0]/frequencies/standby-mhz",
+    "instrumentation/comm[0]/frequencies/dial-khz",
+    "instrumentation/comm[0]/frequencies/dial-mhz",
+    "instrumentation/comm[0]/test-btn",
+    "instrumentation/nav[0]/audio-btn",
+    "instrumentation/nav[0]/power-btn",
+    "instrumentation/nav[0]/volume",
+    "instrumentation/nav[0]/frequencies/selected-mhz",
+    "instrumentation/nav[0]/frequencies/standby-mhz",
+    "instrumentation/nav[0]/frequencies/dial-khz",
+    "instrumentation/nav[0]/frequencies/dial-mhz",
+    "instrumentation/nav[0]/radials/selected-deg",
+);
+ setprop("/r44/engines/engine[0]/mp-pressure",1);
+
+
+# mhab merged from woolthread.nas
+# Simple vibrating yawstring
+
+var yawstring = func {
+
+  var airspeed = getprop("/velocities/airspeed-kt");
+  # mhab fix
+  if ( airspeed == nil ) airspeed=0;
+  var rpm = getprop("/rotors/main/rpm");
+  var severity = 0;
+
+  if ( (airspeed < 137) and (rpm >170)) {
+    severity = ( math.sin (math.pi*airspeed/137) * (rand()*12) ) ;
+  }
+
+  var position = getprop("/orientation/side-slip-deg") + severity ;
+  setprop("/instrumentation/yawstring",position);
+  settimer(yawstring,0);
+
+}
+
+# Start the yawstring ASAP
+yawstring();
+
+kma20.new(0)
 });
 
 setlistener("/sim/signals/reinit", func {
@@ -64,6 +111,10 @@ setlistener("controls/engines/engine[0]/clutch", func(clutch){
       setprop("/engines/engine/clutch-engaged",0);
     }
 },0,0);
+
+
+
+
 
 ##############################################
 ######### AUTOSTART / AUTOSHUTDOWN ###########
@@ -150,6 +201,7 @@ var update_systems = func {
 	if(!RPM_arm.getBoolValue()){
 	if(getprop("/rotors/main/rpm") > 525)RPM_arm.setBoolValue(1);
 	}
+	
 
 	if(getprop("/systems/electrical/outputs/starter") > 11){
 	    if(getprop("/controls/electric/key") > 2){
@@ -176,6 +228,14 @@ var update_systems = func {
 	    }
 
 	if(getprop("/engines/engine/running")){
+	
+	var engineTrottle = getprop("/controls/engines/engine/throttle"); #mp gauge based on throttle
+
+    interpolate("/r44/engines/engine[0]/mp-pressure", engineTrottle, 0.9);
+	
+	
+	
+	print(getprop("/r44/engines/engine[0]/mp-pressure"));
 	  if(getprop("/engines/engine/amp-v") > 0){
 	    if(getprop("/engines/engine/clutch-engaged")){
 		interpolate("/rotors/main/rpm", 2700 * throttle, 0.9);
@@ -195,6 +255,7 @@ var update_systems = func {
 	  interpolate("/engines/engine/rpm", 0, 0.8);
 	  interpolate("/rotors/main/rpm", 0, 0.4);
 	  interpolate("/rotors/tail/rpm", 0, 0.4);
+      setprop("/r44/engines/engine[0]/mp-pressure",1);
 	}
 	settimer(update_systems,0);
 }
