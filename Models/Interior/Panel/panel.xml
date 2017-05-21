@@ -15,20 +15,24 @@
     <object-name>LHpedal</object-name>
     <object-name>RHpedal</object-name>
     <object-name>alt.annun</object-name>
+     <object-name>Llight.switch</object-name>
+      <object-name>vitre</object-name>
+      <object-name>vitre.001</object-name>
 
     <!-- Objets transparents -->
   </animation>
-
   
-  <animation>
-    <type>material</type>
-    <object-name>alt.annun</object-name>
-    <emission>
-      <red>   2 </red>
-      <green> 2 </green>
-      <blue>  2 </blue>
-    </emission>
+   <animation>
+    <type>noshadow</type>
+    <object-name>vitre</object-name>
   </animation>
+  
+   <animation>
+    <type>noshadow</type>
+    <object-name>vitre.001</object-name>
+  </animation>
+  
+
   
     <model>
         <name>fe</name>
@@ -53,7 +57,17 @@
       <z-m>  0.300 </z-m>
       <pitch-deg> -5 </pitch-deg>
         </offsets>
+         
     </model>   
+    
+    
+    <animation>
+        <type>select</type>
+        <object-name>Garmin196-GPS-non-Canvas</object-name>
+        <condition>
+            <property>/sim/model/r44/gps-visible</property>
+        </condition>
+    </animation>  
   
    <model>
     <path>Aircraft/R44/Models/Interior/Panel/Instruments/ManifoldPressure/asi.xml</path>
@@ -220,6 +234,8 @@
     <type>rotate</type>
     <object-name>Yokeshaft</object-name>
     <object-name>Yoke</object-name>
+    <object-name>Llight.switch</object-name>
+    <object-name>nut.001</object-name>
     <property>controls/flight/elevator</property>
     <factor> 15 </factor>
     <center>
@@ -237,6 +253,8 @@
   <animation>
     <type>rotate</type>
     <object-name>Yoke</object-name>
+    <object-name>Llight.switch</object-name>
+    <object-name>nut.001</object-name>
     <object-name>Yokeshaft</object-name>
     <property>controls/flight/aileron</property>
     <factor> 15 </factor>
@@ -251,6 +269,48 @@
       <z>  0 </z>
     </axis>
   </animation>
+  
+  <animation>
+        <type>rotate</type>
+        <object-name>Llight.switch</object-name>
+        <property>/sim/rendering/als-secondary-lights/use-landing-light</property>
+        <factor>30</factor>
+        <center>
+            <x-m>0.270</x-m>
+            <y-m>-0.004</y-m>
+            <z-m>0.031</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+     <animation>
+        <type>pick</type>
+        <object-name>Llight.switch</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/rendering/als-secondary-lights/use-landing-light</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+        </action>
+    </animation>
+  
+     <animation>
+  <type>select</type>
+  <object-name>Light</object-name>
+  <condition>
+   <property>controls/lighting/landing-light</property>
+  </condition>
+ </animation>
+  
 
   <animation>
     <type>rotate</type>
@@ -466,5 +526,19 @@
       <pitch-deg> -65 </pitch-deg>
     </offsets>
   </model>
+  
+     <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitre</object-name>
+  </animation>
+  
+    <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitre.001</object-name>
+  </animation>
 
 </PropertyList>

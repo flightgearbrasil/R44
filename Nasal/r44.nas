@@ -47,6 +47,8 @@ aircraft.data.add(
     "instrumentation/nav[0]/radials/selected-deg",
 );
  setprop("/r44/engines/engine[0]/mp-pressure",1);
+  setprop("/sim/model/r44/gps-visible",1);
+ 
 
 
 # mhab merged from woolthread.nas
@@ -73,13 +75,25 @@ var yawstring = func {
 # Start the yawstring ASAP
 yawstring();
 
-kma20.new(0)
+
 });
 
 setlistener("/sim/signals/reinit", func {
     RPM_arm.setBoolValue(0);
     setprop("/controls/engines/engine/throttle",1);
 });
+
+
+setlistener("/controls/lighting/instruments-norm", func {
+    var light = getprop("/controls/lighting/instruments-norm");
+
+    setprop("controls/lighting/radio-norm",light);
+});
+
+
+
+
+
 
 setlistener("/sim/current-view/view-number", func(vw) {
     var nm = vw.getValue();
