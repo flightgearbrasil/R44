@@ -237,6 +237,13 @@
     </offsets>
   </model>
 
+  <!-- TV Camera -->
+
+  <model>
+    <name>TVCam</name>
+    <path>Aircraft/R44/Models/TVCam.xml</path>
+  </model>
+
   <!-- Ouverture/fermeture des portes -->
   <animation>
     <name>PorteAvantGauche</name>
