@@ -29,6 +29,10 @@
   </unload>
 </nasal>
 
+<sound>
+  <path>Aircraft/R44/Sounds/clipper-mp-sound.xml</path>
+</sound>
+
 <!-- Le fuselage -->
 <model>
   <path>Aircraft/R44/Models/main.xml</path>
