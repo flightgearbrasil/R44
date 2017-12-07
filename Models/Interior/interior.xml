@@ -51,18 +51,6 @@
     <object-name>intvitreBD</object-name>
   </effect>
 
-  <!-- working for Rembrandt -->
-  <effect>
-    <inherits-from>Effects/model-transparent</inherits-from>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
-    <object-name>intvitres</object-name>
-    <object-name>intvitreAG</object-name>
-    <object-name>intvitreAD</object-name>
-    <object-name>intvitreBG</object-name>
-    <object-name>intvitreBD</object-name>
-  </effect>
 
   <!-- Les sièges -->
   <model>
