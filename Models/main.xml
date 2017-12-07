@@ -22,6 +22,8 @@
 
     <!-- Transparence -->
     <object-name>vitres</object-name>
+      <object-name>intvitres</object-name>
+    
     <object-name>verrelampe</object-name>
     <object-name>vitreAG</object-name>
     <object-name>vitreAD</object-name>
@@ -82,6 +84,7 @@
     <object-name>lights</object-name>
   </effect>
 
+
   <effect>
     <inherits-from>Effects/model-combined-deferred</inherits-from>
     <condition>
@@ -99,6 +102,7 @@
     <object-name>derive</object-name>
     <object-name>lights</object-name>
   </effect>
+  
 
   <animation>
     <type>shader</type>
@@ -110,6 +114,9 @@
     <object-name>vitreBG</object-name>
     <object-name>vitreBD</object-name>
   </animation>
+  
+  
+
 
   <animation>
     <type>noshadow</type>
@@ -122,21 +129,21 @@
     <object-name>redlight</object-name>
     <object-name>greenlight</object-name>
   </animation>
+  
+       
 
-  <!-- working for Rembrandt -->
-  <effect>
-    <inherits-from>Effects/model-transparent</inherits-from>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
-    <object-name>vitres</object-name>
-    <object-name>verrelampe</object-name>
-    <object-name>vitreAG</object-name>
+ 
+  
+   <effect>
+
+  <inherits-from>Effects/glass</inherits-from>
+  <object-name>intvitres</object-name>
+   <object-name>vitreAG</object-name>
     <object-name>vitreAD</object-name>
     <object-name>vitreBG</object-name>
     <object-name>vitreBD</object-name>
-    <object-name>redlight</object-name>
-    <object-name>greenlight</object-name>
+     <object-name>vitres</object-name>
+      
   </effect>
 
   <!-- Immatriculatoin -->
@@ -179,12 +186,30 @@
       <blue-prop>emission/blue</blue-prop>
     </emission>
   </animation>
+  
+ 
 
   <!-- Intérieur -->
   <model>
     <name>Interieur</name>
     <path>Aircraft/R44/Models/Interior/interior.xml</path>
   </model>
+  
+ <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>vitres</object-name>
+    <object-name>verrelampe</object-name>
+    <object-name>vitreAG</object-name>
+    <object-name>vitreAD</object-name>
+    <object-name>vitreBG</object-name>
+    <object-name>vitreBD</object-name>
+    <object-name>redlight</object-name>
+    <object-name>greenlight</object-name>
+  </effect>
 
   <!-- For Rembrandt -->
   <animation>

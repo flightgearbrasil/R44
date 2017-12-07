@@ -40,6 +40,16 @@
     <object-name>intvitreBG</object-name>
     <object-name>intvitreBD</object-name>
   </animation>
+  
+  <effect>
+
+  <inherits-from>Effects/glass</inherits-from>
+    <object-name>intvitres</object-name>
+    <object-name>intvitreAG</object-name>
+    <object-name>intvitreAD</object-name>
+    <object-name>intvitreBG</object-name>
+    <object-name>intvitreBD</object-name>
+  </effect>
 
   <!-- working for Rembrandt -->
   <effect>
@@ -258,5 +268,10 @@
       <z2-m> -0.346 </z2-m>
     </axis>
   </animation>
+  
+    
 
 </PropertyList>
+
+
+
