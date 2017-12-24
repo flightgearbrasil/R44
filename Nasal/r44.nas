@@ -25,6 +25,7 @@ setlistener("/sim/signals/fdm-initialized", func {
     RPM_arm.setBoolValue(0);
     print("Systems ... Check");
     settimer(update_systems,2);
+    splash_vec_loop();
     setprop("sim/model/sound/volume", 0.5);
     setprop("/instrumentation/doors/Rcrew/position-norm",1);
     
@@ -284,3 +285,29 @@ var update_systems = func {
 	}
 	settimer(update_systems,0);
 }
+
+var splash_vec_loop = func(){
+    var airspeed = getprop("/velocities/airspeed-kt");
+
+   
+    var airspeed_max = 120;
+
+    if (airspeed > airspeed_max) {
+        airspeed = airspeed_max;
+    }
+
+    airspeed = math.sqrt(airspeed / airspeed_max);
+
+    var splash_x = -0.1 - 2 * airspeed;
+    var splash_y = 0.0;
+    var splash_z = 1.0 - 1.35 * airspeed;
+
+    setprop("/environment/aircraft-effects/splash-vector-x", splash_x);
+    setprop("/environment/aircraft-effects/splash-vector-y", splash_y);
+    setprop("/environment/aircraft-effects/splash-vector-z", splash_z);
+
+    settimer(func(){
+        splash_vec_loop();
+    }, 0.16);
+}
+
