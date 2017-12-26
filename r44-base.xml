@@ -176,6 +176,8 @@
     <file>Aircraft/R44/Nasal/doors.nas</file>
   </doors>
   <r44>
+    <file>Aircraft/R44/Nasal/fcs-management.nas</file>
+    <file>Aircraft/R44/Nasal/helicopter-fcs.nas</file>
     <file>Aircraft/R44/Nasal/immat.nas</file>
     <file>Aircraft/R44/Nasal/light.nas</file>
     <file>Aircraft/R44/Nasal/r44.nas</file>
@@ -183,8 +185,7 @@
     <file>Aircraft/R44/Nasal/electrical.nas</file>
     <file>Aircraft/R44/Nasal/liveries.nas</file>
     <file>Aircraft/R44/Nasal/bladevisible.nas</file>
-    <file>Aircraft/R44/Nasal/fcs-management.nas</file>
-    <file>Aircraft/Generic/helicopter-fcs.nas</file>*
+    
   </r44>
 </nasal>
 

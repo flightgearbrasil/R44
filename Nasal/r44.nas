@@ -15,6 +15,7 @@ var Fuel2_LBS= props.globals.getNode("/consumables/fuel/tank[1]/level-lbs",1);
 var TotalFuelG=props.globals.getNode("/consumables/fuel/total-fuel-gals",1);
 var TotalFuelP=props.globals.getNode("/consumables/fuel/total-fuel-lbs",1);
 var NoFuel=props.globals.getNode("/engines/engine/out-of-fuel",1);
+var firstTime = 1;
 
 var FHmeter = aircraft.timer.new("/instrumentation/clock/flight-meter-sec", 10);
 FHmeter.stop();
@@ -49,8 +50,6 @@ aircraft.data.add(
 );
  setprop("/r44/engines/engine[0]/mp-pressure",1);
   setprop("/sim/model/r44/gps-visible",1);
- 
-
 
 # mhab merged from woolthread.nas
 # Simple vibrating yawstring
@@ -244,6 +243,8 @@ var update_systems = func {
 
 	if(getprop("/engines/engine/running")){
 	
+    
+	
 	#when engine on moves fuel pressure and temperature gaguges NOTE: not realistic!! fix later
 	interpolate("oilpressure",24,0.6);
 	interpolate("oiltemp",24,20);
@@ -283,6 +284,7 @@ var update_systems = func {
 	if(getprop("/consumables/fuel/total-fuel-lbs") == 0) {
           setprop("/engines/engine/running",0);
 	}
+	
 	settimer(update_systems,0);
 }
 
