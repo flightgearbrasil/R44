@@ -50,6 +50,7 @@ aircraft.data.add(
 );
  setprop("/r44/engines/engine[0]/mp-pressure",1);
   setprop("/sim/model/r44/gps-visible",1);
+   setprop("/sim/model/r44/cluthLight",0);
 
 # mhab merged from woolthread.nas
 # Simple vibrating yawstring
@@ -121,8 +122,10 @@ setlistener("controls/engines/engine[0]/clutch", func(clutch){
     var clutch= clutch.getBoolValue();
     if(clutch and props.globals.getNode("/engines/engine/running",1).getBoolValue()){
       setprop("/engines/engine/clutch-engaged",1);
+       setprop("/sim/model/r44/cluthLight",1);
     }else{
       setprop("/engines/engine/clutch-engaged",0);
+       setprop("/sim/model/r44/cluthLight",0);
     }
 },0,0);
 
@@ -216,6 +219,12 @@ var update_systems = func {
 	if(getprop("/rotors/main/rpm") > 525)RPM_arm.setBoolValue(1);
 	}
 	
+	if(getprop("/rotors/main/rpm") > 475) {
+         setprop("/sim/model/r44/cluthLight",0);
+	}
+	
+	
+	    
 
 	if(getprop("/systems/electrical/outputs/starter") > 11){
 	    if(getprop("/controls/electric/key") > 2){

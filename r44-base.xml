@@ -102,6 +102,7 @@
      <path>/sim/model/r44/pilot-visible</path>
      <path>/sim/model/r44/copilot-visible</path>
      <path>/rotors/main/bladesvisible</path>
+     <path>/sim/model/r44/cluthLight</path>
    </aircraft-data>
 
  </sim>
