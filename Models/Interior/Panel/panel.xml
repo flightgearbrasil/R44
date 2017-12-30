@@ -297,8 +297,14 @@
   <action>
     <button>0</button>
     <binding>
+     <property>/sim/rendering/als-secondary-lights/landing-light3-offset-deg</property>
+        <value>-45</value>
+    </binding>
+    <binding>
       <command>property-toggle</command>
       <property>/sim/rendering/als-secondary-lights/use-landing-light</property>
+      
+      
     </binding>
     <binding>
       <command>property-toggle</command>

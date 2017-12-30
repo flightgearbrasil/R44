@@ -230,6 +230,17 @@
     <name>TVCam</name>
     <path>Aircraft/R44/Models/TVCam.xml</path>
   </model>
+  
+   <model>
+    <name>LandingLight1</name>
+    <path>Aircraft/R44/Models/light/LandingLight.xml</path>
+    <offsets>
+      <x-m> -4.43 </x-m>
+      <y-m> 0 </y-m>
+      <z-m> -0.808 </z-m>
+      <pitch-deg>-12</pitch-deg>
+    </offsets>
+  </model>
 
   <!-- Ouverture/fermeture des portes -->
   <animation>
@@ -400,40 +411,6 @@
     </offsets>
   </model>
 
-  <!-- Wing light cone -->
-  <model>
-    <name>Taxi-LightL</name>
-    <path>Aircraft/R44/Models/light/light-cone.xml</path>
-    <offsets>
-      <x-m>         -4.525 </x-m>
-      <y-m>         -0.076 </y-m>
-      <z-m>         -0.857 </z-m>
-      <heading-deg> 10.000 </heading-deg>
-    </offsets>
-  </model>
-
-  <model>
-    <name>Taxi-LightR</name>
-    <path>Aircraft/R44/Models/light/light-cone.xml</path>
-    <offsets>
-      <x-m>          -4.525 </x-m>
-      <y-m>           0.076 </y-m>
-      <z-m>          -0.857 </z-m>
-      <heading-deg> -10.000 </heading-deg>
-    </offsets>
-  </model>
-
-  <animation>
-    <type>select</type>
-    <object-name>Taxi-LightL</object-name>
-    <object-name>Taxi-LightR</object-name>
-    <condition>
-      <equals>
-        <property>controls/lighting/nav-lights</property>
-        <value> 1 </value>
-      </equals>
-    </condition>
-  </animation>
 
   <model>
     <path>Aircraft/R44/Models/HelicopterPushback/HelicopterPushback.xml</path>
