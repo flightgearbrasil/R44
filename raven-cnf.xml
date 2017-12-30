@@ -4,13 +4,16 @@
 
   <sim>
     <description>Robinson R44 Raven II (YASim)</description>
-    <author>Emmanuel BARANGER (3D)/JM-26 (FDM)</author>
+    <!--<author>Emmanuel BARANGER (3D)/JM-26 (FDM)</author> in base.xml-->
     <flight-model archive="y">yasim</flight-model>
     <aero archive="y">raven</aero>
 
     <startup>
       <splash-texture>Aircraft/R44/Splashs/raven-splash.png</splash-texture>
-    </startup> 
+	  <splash-texture>Splashs/raven-splash1.png</splash-texture>
+	  <splash-texture>Splashs/raven-splash2.png</splash-texture>
+	  <splash-texture>Splashs/raven-splash3.png</splash-texture>
+    </startup>
 
     <sound>
       <path>Aircraft/R44/Sounds/raven-sound.xml</path>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>LightCone.ac</path>
+
+   
+
+  <effect>
+    <inherits-from>Effects/light-cone</inherits-from>
+    <object-name>Cone</object-name>
+  </effect>
+  
+    <animation>
+    <type>select</type>
+    <object-name>Cone</object-name>
+    <object-name>Cone-texture</object-name>
+    <object-name>Light</object-name>
+   
+    <condition>
+        <property>/sim/rendering/als-secondary-lights/use-landing-light</property>
+    </condition>
+  </animation>
+
+
+  
+ </PropertyList>

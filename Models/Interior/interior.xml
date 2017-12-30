@@ -40,13 +40,10 @@
     <object-name>intvitreBG</object-name>
     <object-name>intvitreBD</object-name>
   </animation>
-
-  <!-- working for Rembrandt -->
+  
   <effect>
-    <inherits-from>Effects/model-transparent</inherits-from>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
+
+  <inherits-from>Effects/glass</inherits-from>
     <object-name>intvitres</object-name>
     <object-name>intvitreAG</object-name>
     <object-name>intvitreAD</object-name>
@@ -54,23 +51,45 @@
     <object-name>intvitreBD</object-name>
   </effect>
 
+
   <!-- Les sièges -->
   <model>
     <path>Aircraft/R44/Models/Interior/seat/4seats.xml</path>
   </model>
+  
+   <!-- Pilote -->
+  <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/woolthread/woolthread.xml</path>
+    <offsets>
+      <x-m> -4.410 </x-m>
+      <y-m> 0.010 </y-m>
+      <z-m> -0.407 </z-m>
+    </offsets>
+    <pitch-deg> 45 </pitch-deg>
+  </model>
+  
 
   <!-- Pilote -->
   <model>
+      <name>pilot</name>
     <path>Aircraft/R44/Models/Pilot/pilot.xml</path>
     <offsets>
-      <x-m> -3.636 </x-m>
+      <x-m> -3.640 </x-m>
       <y-m> -0.252 </y-m>
       <z-m> -0.711 </z-m>
     </offsets>
   </model>
+   <animation>
+        <type>select</type>
+        <object-name>pilot</object-name>
+        <condition>
+            <property>/sim/model/r44/pilot-visible</property>
+        </condition>
+    </animation>    
 
   <!-- Copilote -->
   <model>
+    <name>copilot</name>
     <path>Aircraft/R44/Models/Pilot/pilot.xml</path>
     <offsets>
       <x-m> -3.636 </x-m>
@@ -78,6 +97,13 @@
       <z-m> -0.711 </z-m>
     </offsets>
   </model>
+   <animation>
+        <type>select</type>
+        <object-name>copilot</object-name>
+        <condition>
+            <property>/sim/model/r44/copilot-visible</property>
+        </condition>
+    </animation>    
 
   <!-- Planche de bord -->
   <model>
@@ -88,6 +114,7 @@
       <z-m> -0.668 </z-m>
     </offsets>
   </model>
+
 
   <!-- Ouverture/fermeture des portes -->
   <animation>
@@ -229,5 +256,10 @@
       <z2-m> -0.346 </z2-m>
     </axis>
   </animation>
+  
+    
 
 </PropertyList>
+
+
+
