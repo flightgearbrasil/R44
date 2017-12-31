@@ -231,17 +231,34 @@
     <path>Aircraft/R44/Models/TVCam.xml</path>
   </model>
   
-   <model>
-    <name>LandingLight1</name>
-    <path>Aircraft/R44/Models/light/LandingLight.xml</path>
-    <offsets>
-      <x-m> -4.43 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> -0.808 </z-m>
-      <pitch-deg>-12</pitch-deg>
-    </offsets>
-  </model>
 
+  
+  	<model>
+        <name>LandingLight1</name>
+        <path>Aircraft/R44/Models/light/BBeacon.xml</path>
+        <offsets>
+            <x-m> -4.55 </x-m>
+            <y-m> -0.06 </y-m>
+            <z-m> -0.908 </z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+    
+    <model>
+        <name>LandingLight2</name>
+        <path>Aircraft/R44/Models/light/BBeacon.xml</path>
+        <offsets>
+            <x-m> -4.55 </x-m>
+            <y-m> 0.06 </y-m>
+            <z-m> -0.908 </z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    
+   
+ 
+ 
   <!-- Ouverture/fermeture des portes -->
   <animation>
     <name>PorteAvantGauche</name>
