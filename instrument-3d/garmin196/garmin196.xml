@@ -77,7 +77,7 @@
 			<blue>  1 </blue>
 			<red>   1 </red>
 			<green> 1 </green>
-			<factor-prop>/instrumentation/garmin196/light</factor-prop>
+            <value>1</value>
 		</emission>
 	</animation>
 	
