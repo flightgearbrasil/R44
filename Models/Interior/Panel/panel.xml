@@ -108,17 +108,35 @@
     <pitch-deg> -65 </pitch-deg>
   </offsets>
 </model>
-
 <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/Mixture/Mixture.xml</path>
+    <offsets>
+        <x-m> 0.103 </x-m>
+        <y-m> 0.071 </y-m>    
+        <z-m>  -0.062 </z-m>
+        <pitch-deg> -30 </pitch-deg>
+    </offsets>
+    </model>
+
+ <model>
   <path>Aircraft/R44/Models/Interior/Panel/Instruments/kma20/kma20.xml</path>
   <offsets>
     <x-m> 0.102 </x-m>
     <y-m> -0.005 </y-m>    
-    <z-m>  -0.089 </z-m>
+    <z-m>  -0.099 </z-m>
+    <pitch-deg> -30 </pitch-deg>
+  </offsets>
+    </model> 
+
+    <model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/kx165/kx165-2.xml</path>
+  <offsets>
+    <x-m> 0.129 </x-m>
+    <y-m> -0.005 </y-m>
+    <z-m>  -0.154 </z-m>
     <pitch-deg> -30 </pitch-deg>
   </offsets>
 </model>
-
 
 <model>
   <path>Aircraft/R44/Models/Interior/Panel/Instruments/kt76a/kt76a.xml</path>
@@ -130,15 +148,7 @@
   </offsets>
 </model>
 
-<model>
-  <path>Aircraft/R44/Models/Interior/Panel/Instruments/kx165/kx165-2.xml</path>
-  <offsets>
-    <x-m> 0.129 </x-m>
-    <y-m> -0.005 </y-m>
-    <z-m>  -0.144 </z-m>
-    <pitch-deg> -30 </pitch-deg>
-  </offsets>
-</model>
+
 
 <model>
   <path>Aircraft/R44/Models/Interior/Panel/Instruments/alt/alt.xml</path>
