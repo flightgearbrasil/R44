@@ -293,6 +293,9 @@ var update_systems = func {
 	if(getprop("/consumables/fuel/total-fuel-lbs") == 0) {
           setprop("/engines/engine/running",0);
 	}
+	if(getprop("controls/engines/engine[0]/mixture") < 0.6) {
+        setprop("/engines/engine/running",0);
+	}
 	
 	settimer(update_systems,0);
 }
