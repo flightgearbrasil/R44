@@ -111,9 +111,9 @@
 <model>
     <path>Aircraft/R44/Models/Interior/Panel/Instruments/Mixture/Mixture.xml</path>
     <offsets>
-        <x-m> 0.103 </x-m>
+        <x-m> 0.090 </x-m>
         <y-m> 0.071 </y-m>    
-        <z-m>  -0.062 </z-m>
+        <z-m>  -0.070 </z-m>
         <pitch-deg> -30 </pitch-deg>
     </offsets>
     </model>
