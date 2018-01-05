@@ -29,6 +29,7 @@ setlistener("/sim/signals/fdm-initialized", func {
     splash_vec_loop();
     setprop("sim/model/sound/volume", 0.5);
     setprop("/instrumentation/doors/Rcrew/position-norm",1);
+    setprop("controls/engines/engine[0]/mixture",0);
     
     # COMM1 (according to its documentation)
 aircraft.data.add(
