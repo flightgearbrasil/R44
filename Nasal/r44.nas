@@ -92,6 +92,55 @@ setlistener("/controls/lighting/instruments-norm", func {
     setprop("controls/lighting/radio-norm",light);
 });
 
+setlistener("sim/model/r44/remove-door-rr", func {
+   var weight = getprop("yasim/gross-weight-lbs");
+   
+   if(getprop("sim/model/r44/remove-door-rr") == 1) {
+        setprop("yasim/gross-weight-lbs",weight-7);
+  
+   } else {
+        setprop("yasim/gross-weight-lbs",weight+7);
+   }
+   
+});
+
+#subtract the weight of the doors if they are removed
+setlistener("sim/model/r44/remove-door-rf", func {
+     var weight = getprop("yasim/gross-weight-lbs");
+   
+   if(getprop("sim/model/r44/remove-door-rf") == 1) {
+        setprop("yasim/gross-weight-lbs",weight-7.5);
+  
+   } else {
+        setprop("yasim/gross-weight-lbs",weight+7.5);
+   }
+});
+
+setlistener("sim/model/r44/remove-door-lr", func {
+     var weight = getprop("yasim/gross-weight-lbs");
+   
+   if(getprop("sim/model/r44/remove-door-lr") == 1) {
+        setprop("yasim/gross-weight-lbs",weight-7);
+  
+   } else {
+        setprop("yasim/gross-weight-lbs",weight+7);
+   }
+});
+
+setlistener("sim/model/r44/remove-door-lf", func {
+    var weight = getprop("yasim/gross-weight-lbs");
+   
+   if(getprop("sim/model/r44/remove-door-lf") == 1) {
+        setprop("yasim/gross-weight-lbs",weight-7.5);
+  
+   } else {
+        setprop("yasim/gross-weight-lbs",weight+7.5);
+   }
+});
+
+
+
+
 
 
 
