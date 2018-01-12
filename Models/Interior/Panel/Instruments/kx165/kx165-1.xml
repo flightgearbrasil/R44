@@ -187,7 +187,7 @@
         <object-name>NavUse</object-name>
         <object-name>NavStby</object-name>
         <condition>
-            <property>/sim/model/c172p/lighting/comm0-power</property>
+            <property>/sim/model/c172p/lighting/comm1-power</property>
         </condition>
     </animation>
 
