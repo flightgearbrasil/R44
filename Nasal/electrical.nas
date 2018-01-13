@@ -259,13 +259,14 @@ var avionics_bus = func() {
 #    OutPuts.getNode("comm[0]",1).setValue(bus_volts);
 #    OutPuts.getNode("comm[1]",1).setValue(bus_volts);
 
-  setprop("/systems/electrical/outputs/nav[1]", bus_volts);
-  setprop("/systems/electrical/outputs/comm[1]", bus_volts);
+  setprop("/systems/electrical/outputs/nav[0]", bus_volts);
+  setprop("/systems/electrical/outputs/comm[0]", bus_volts);
  
   if(bus_volts > 0) {  #if there is power then turn on the radios
-     setprop("/sim/model/c172p/lighting/comm1-power",  1);
+     setprop("systems/electrical/outputs/comm[0]",  1);
   } else {
-     setprop("/sim/model/c172p/lighting/comm1-power", 0);
+     setprop("systems/electrical/outputs/comm[0]", 0);
+     
   }
  
 
