@@ -198,6 +198,7 @@ setlistener("/sim/model/start-idling", func(idle){
 
 var Startup = func {
   setprop("/controls/electric/battery-switch",1);
+  setprop("controls/engines/engine[0]/mixture",1);
   setprop("/controls/electric/engine/generator",1);
   setprop("/controls/electric/key",4);
   setprop("/engines/engine/rpm",2700);
@@ -206,6 +207,7 @@ var Startup = func {
 }
 
 var Shutdown = func {
+  setprop("controls/engines/engine[0]/mixture",0);
   setprop("/controls/electric/battery-switch",0);
   setprop("/controls/electric/engine/generator",0);
   setprop("/controls/electric/key",0);
