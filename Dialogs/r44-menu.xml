@@ -14,6 +14,13 @@
         </binding>
       </item>
       <item>
+        <label>Equipment</label>
+        <binding>
+            <command>nasal</command>
+            <script>r44.equipment_dialog.toggle()</script>
+        </binding>
+        </item>
+      <item>
         <label>Select Livery</label>
         <binding>
           <command>nasal</command>
@@ -41,18 +48,6 @@
             var a = "/sim/model/r44/copilot-visible";
             setprop(a, var i = !getprop(a));
             gui.popupTip("pilots visible " ~ (i ? "On" : "Off"));
-          </script>
-        </binding>
-      </item>
-      <item>
-        <label>Hide/Show Garming196 Gps</label>
-        <binding>
-          <command>nasal</command>
-          <script>
-            var p = "/sim/model/r44/gps-visible";
-            setprop(p, var i = !getprop(p));
-
-            gui.popupTip("gps visible " ~ (i ? "On" : "Off"));
           </script>
         </binding>
       </item>
