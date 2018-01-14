@@ -180,6 +180,7 @@
     <file>Aircraft/R44/Nasal/fcs-management.nas</file>
     <file>Aircraft/R44/Nasal/helicopter-fcs.nas</file>
     <file>Aircraft/R44/Nasal/immat.nas</file>
+    <file>Aircraft/R44/Nasal/equipment.nas</file>
     <file>Aircraft/R44/Nasal/light.nas</file>
     <file>Aircraft/R44/Nasal/r44.nas</file>
     <file>Aircraft/R44/Nasal/rotoranimation.nas</file>
