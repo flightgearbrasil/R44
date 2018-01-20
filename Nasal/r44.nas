@@ -366,7 +366,7 @@ var splash_vec_loop = func(){
 
     var splash_x = -0.1 - 2 * airspeed;
     var splash_y = 0.0;
-    var splash_z = 1.0 - 1.35 * airspeed;
+    var splash_z = -1*(1.0 - 1.35 * airspeed);
 
     setprop("/environment/aircraft-effects/splash-vector-x", splash_x);
     setprop("/environment/aircraft-effects/splash-vector-y", splash_y);
