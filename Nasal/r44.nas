@@ -327,10 +327,7 @@ var update_systems = func {
             }
             interpolate("/engines/engine/rpm", 2700 * throttle, 0.8);
         } else {
-            if(!getprop("/controls/engines/engine/generator") and getprop("/engines/engine/amp-v") < 2){
-            setprop("/engines/engine/clutch-engaged",0);
-            setprop("/engines/engine/running",0);
-            }
+          
         }
 	}else{
 	interpolate("oilpressure",0,0.6);
