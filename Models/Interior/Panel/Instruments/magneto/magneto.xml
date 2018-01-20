@@ -72,6 +72,21 @@
         <property>sim/model/sound/click</property>
       </binding>
     </action>
+    <action>
+      <button>3</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/electric/key</property>
+        <step>1</step>
+        <min>0</min>
+        <max>3</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+      </binding>
+    </action>
   </animation>
 
   <animation>
