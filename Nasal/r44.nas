@@ -231,6 +231,7 @@ var kill_engine=func{
         setprop("/controls/engines/engine/magnetos",0);
         setprop("/engines/engine/clutch-engaged",0);
         setprop("/engines/engine/running",0);
+        setprop("/engines/engine/rpm",0);
         start_timer=0;
 }
 
@@ -344,6 +345,9 @@ var update_systems = func {
 	}
 	if(getprop("controls/engines/engine[0]/mixture") < 0.6) {
       kill_engine();
+	}
+	if(getprop("/controls/electric/key") == 0) {
+        kill_engine();
 	}
 	
 	settimer(update_systems,0);
