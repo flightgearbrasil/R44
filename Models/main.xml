@@ -260,25 +260,25 @@
   <animation>
     <name>PorteAvantGauche</name>
     <object-name>porteAG</object-name>
-    <object-name>vitreAG</object-name>
+    <object-name>windowFR</object-name>
   </animation>
 
   <animation>
     <name>PorteAvantDroite</name>
     <object-name>porteAD</object-name>
-    <object-name>vitreAD</object-name>
+    <object-name>windowFL</object-name>
   </animation>
 
   <animation>
     <name>PorteArriereGauche</name>
     <object-name>porteBG</object-name>
-    <object-name>vitreBG</object-name>
+    <object-name>windowRR</object-name>
   </animation>
 
   <animation>
     <name>PorteArriereDroite</name>
     <object-name>porteBD</object-name>
-    <object-name>vitreBD</object-name>
+    <object-name>windowRL</object-name>
   </animation>
 
   <!-- Porte avant gauche -->
@@ -482,7 +482,7 @@
   <animation>
     <type>select</type>
     <object-name>porteBD</object-name>
-    <object-name>vitreBD</object-name>
+    <object-name>windowRL</object-name>
     <object-name>intporteBD</object-name>
     <object-name>intvitreBD</object-name>
     <condition>
@@ -494,7 +494,7 @@
   <animation>
     <type>select</type>
     <object-name>porteAD</object-name>
-    <object-name>vitreAD</object-name>
+    <object-name>windowFL</object-name>
     <object-name>intporteAD</object-name>
     <object-name>intvitreAD</object-name>
     <condition>
@@ -506,7 +506,7 @@
   <animation>
     <type>select</type>
     <object-name>porteBG</object-name>
-    <object-name>vitreBG</object-name>
+    <object-name>windowRR</object-name>
     <object-name>intporteBG</object-name>
     <object-name>intvitreBG</object-name>
     <condition>
@@ -518,7 +518,7 @@
   <animation>
     <type>select</type>
     <object-name>porteAG</object-name>
-    <object-name>vitreAG</object-name>
+    <object-name>windowFR</object-name>
     <object-name>intporteAG</object-name>
     <object-name>intvitreAG</object-name>
     <condition>
