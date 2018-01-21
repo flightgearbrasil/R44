@@ -50,8 +50,9 @@ aircraft.data.add(
     "instrumentation/nav[0]/radials/selected-deg",
 );
  setprop("/r44/engines/engine[0]/mp-pressure",1);
-  setprop("/sim/model/r44/gps-visible",1);
-   setprop("/sim/model/r44/cluthLight",0);
+setprop("/sim/model/r44/gps-visible",1);
+setprop("sim/model/r44/tv",0);
+setprop("/sim/model/r44/cluthLight",0);
 
 # mhab merged from woolthread.nas
 # Simple vibrating yawstring

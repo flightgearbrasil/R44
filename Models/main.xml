@@ -225,7 +225,7 @@
 
   <model>
     <name>TVCam</name>
-    <path>Aircraft/R44/Models/TVCam.xml</path>
+    <path>Aircraft/R44/Models/TVcam.xml</path>
   </model>
   
 

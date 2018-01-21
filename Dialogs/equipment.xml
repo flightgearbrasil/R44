@@ -54,7 +54,7 @@
                     <command>property-toggle</command>
                     <property>/sim/model/r44/gps-visible</property>
                 </binding>
-	<binding>
+                <binding>
                     <command>dialog-update</command>
                 </binding>
 	</checkbox>
@@ -62,11 +62,14 @@
             <checkbox>
                 <halign>left</halign>
                 <label>TV Camera</label>
-                <property>sim/model/r44/tv</property>
+                <property>sim/model/R44/tv</property>
                 <live>true</live>
                 <binding>
                     <command>property-toggle</command>
-                    <property>sim/model/r44/tv</property>
+                    <property>sim/model/R44/tv</property>
+                </binding>
+                <binding>
+                    <command>dialog-update</command>
                 </binding>
             </checkbox>
         </group>	
