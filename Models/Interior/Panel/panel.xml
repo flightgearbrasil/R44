@@ -432,14 +432,66 @@
 </model>
 
 <model>
-  <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/alternator.xml</path>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/generic.xml</path>
   <offsets>
-    <x-m> -0.110 </x-m>
-    <y-m> 0.007 </y-m>
-    <z-m> 0.034 </z-m>
+    <x-m> -0.107 </x-m>
+    <y-m> 0.070 </y-m>
+    <z-m> 0.033 </z-m>
     <pitch-deg> -65 </pitch-deg>
   </offsets>
 </model>
+
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/generic.xml</path>
+  <offsets>
+    <x-m> -0.107 </x-m>
+    <y-m> 0.057 </y-m>
+    <z-m> 0.033 </z-m>
+    <pitch-deg> -65 </pitch-deg>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/generic.xml</path>
+  <offsets>
+    <x-m> -0.107 </x-m>
+    <y-m> 0.045 </y-m>
+    <z-m> 0.033 </z-m>
+    <pitch-deg> -65 </pitch-deg>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/alternator.xml</path>
+  <offsets>
+    <x-m> -0.107 </x-m>
+    <y-m> 0.028 </y-m>
+    <z-m> 0.033 </z-m>
+    <pitch-deg> -65 </pitch-deg>
+  </offsets>
+</model>
+
+
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/generic.xml</path>
+  <offsets>
+    <x-m> -0.107 </x-m>
+    <y-m> 0.013 </y-m>
+    <z-m> 0.033 </z-m>
+    <pitch-deg> -65 </pitch-deg>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/generic.xml</path>
+  <offsets>
+    <x-m> -0.107 </x-m>
+    <y-m> -0.005 </y-m>
+    <z-m> 0.033 </z-m>
+    <pitch-deg> -65 </pitch-deg>
+  </offsets>
+</model>
+
 
 <model>
   <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/clutch.xml</path>
@@ -552,6 +604,7 @@
     <pitch-deg> -65 </pitch-deg>
   </offsets>
 </model>
+
 
 <model>
   <path>Aircraft/R44/Models/Interior/Panel/Instruments/switch/master-batt.xml</path>
