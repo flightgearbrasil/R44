@@ -13,17 +13,15 @@
     <type>select</type>
     <object-name>lampon</object-name>
     <condition>
-      <and>
-        <property>/controls/electric/engine/generator</property>
-        <property>/controls/engines/engine/clutch</property>
-        <not>
-          <property>/controls/electric/battery-switch</property>
-        </not>
-        <greater-than>
-          <property>/systems/electrical/outputs/instrument-lights</property>
-          <value>0.0001</value>
-        </greater-than>
-      </and>
+        <or>
+             <not>
+                <property>/controls/electric/engine/generator</property>
+            </not>
+            <not>
+                <property>/engines/engine/running</property>
+            </not>
+        </or>
+    <property>/controls/electric/battery-switch</property>
     </condition>
   </animation>
 
@@ -44,7 +42,6 @@
       <red>   1 </red>
       <green> 1 </green>
       <blue>  1 </blue>
-      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
     </emission>
   </animation>
 
