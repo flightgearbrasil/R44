@@ -297,7 +297,7 @@
 <animation>
   <type>rotate</type>
   <object-name>Llight.switch</object-name>
-  <property>/sim/rendering/als-secondary-lights/use-landing-light</property>
+  <property>sim/model/r44/use-landing-light</property>
   <factor>30</factor>
   <center>
     <x-m>0.270</x-m>
@@ -322,7 +322,7 @@
     </binding>
     <binding>
       <command>property-toggle</command>
-      <property>/sim/rendering/als-secondary-lights/use-landing-light</property>
+      <property>sim/model/r44/use-landing-light</property>
       
       
     </binding>

@@ -16,7 +16,7 @@
       <button>0</button>
       <binding>
         <command>property-toggle</command>
-        <property>controls/lighting/nav-lights</property>
+        <property>sim/model/r44/controls/lighting/nav-lights</property>
       </binding>
       <binding>
           <command>property-toggle</command>
@@ -28,7 +28,7 @@
   <animation>
     <type>rotate</type>
     <object-name>switch</object-name>
-    <property>controls/lighting/nav-lights</property>
+    <property>sim/model/r44/controls/lighting/nav-lights</property>
     <factor> 30 </factor>
     <axis>
       <x>  0 </x>

@@ -230,6 +230,8 @@ var electrical_bus = func(){
         OutPuts.getNode("fuel-pump",1).setValue(0.0);
     }
     
+   
+    
   
 
     if (props.globals.getNode("/controls/engines/engine[0]/starter").getBoolValue()){
@@ -264,8 +266,30 @@ var avionics_bus = func() {
  
   if(bus_volts > 0) {  #if there is power then turn on the radios
      setprop("systems/electrical/outputs/comm[0]",  1);
+      
+      if(getprop("sim/model/r44/controls/lighting/nav-lights") == 1) {
+            setprop("controls/lighting/nav-lights",1);
+      } else {
+       setprop("controls/lighting/nav-lights",0);
+      }
+       if(getprop("sim/model/r44/controls/lighting/beacon") == 1) {
+            setprop("controls/lighting/beacon",1);
+      } else {
+       setprop("controls/lighting/beacon",0);
+      }
+      if(getprop("sim/model/r44/use-landing-light") == 1) {
+            setprop("/sim/rendering/als-secondary-lights/use-landing-light",1);
+      } else {
+       setprop("/sim/rendering/als-secondary-lights/use-landing-light",0);
+      }
+      
+      
+     
   } else {
      setprop("systems/electrical/outputs/comm[0]", 0);
+      setprop("controls/lighting/nav-lights",0);
+      setprop("controls/lighting/beacon",0);
+       setprop("/sim/rendering/als-secondary-lights/use-landing-light",0);
      
   }
  

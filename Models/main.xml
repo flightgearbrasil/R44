@@ -235,8 +235,8 @@
         <path>Aircraft/R44/Models/light/BBeacon.xml</path>
         <offsets>
             <x-m> -4.55 </x-m>
-            <y-m> -0.06 </y-m>
-            <z-m> -0.908 </z-m>
+            <y-m> -0.065 </y-m>
+            <z-m> -0.850 </z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -246,8 +246,8 @@
         <path>Aircraft/R44/Models/light/BBeacon.xml</path>
         <offsets>
             <x-m> -4.55 </x-m>
-            <y-m> 0.06 </y-m>
-            <z-m> -0.908 </z-m>
+            <y-m> 0.065 </y-m>
+            <z-m> -0.850 </z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
