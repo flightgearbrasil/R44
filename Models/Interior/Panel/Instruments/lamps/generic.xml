@@ -8,21 +8,16 @@
     <object-name>lampoff</object-name>
     <object-name>lampon</object-name>
   </animation>
+  
+  <animation>
+    <object-name>lampoff</object-name>
+    <object-name>lampon</object-name>
+  </animation>
 
   <animation>
     <type>select</type>
     <object-name>lampon</object-name>
-    <condition>
-        <or>
-             <not>
-                <property>/controls/electric/engine/generator</property>
-            </not>
-            <not>
-                <property>/engines/engine/running</property>
-            </not>
-        </or>
-    <property>/controls/electric/battery-switch</property>
-    </condition>
+ 
   </animation>
 
   <animation>
@@ -42,8 +37,10 @@
       <red>   1 </red>
       <green> 1 </green>
       <blue>  1 </blue>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
     </emission>
   </animation>
 
+  
 </PropertyList>
 

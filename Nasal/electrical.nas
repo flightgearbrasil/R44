@@ -94,7 +94,7 @@ Alternator = {
 };
 
 var battery = Battery.new(12,30,12,1.0,7.0);
-var alternator = Alternator.new("/rotors/main/rpm",250.0,12.0,30.0);
+var alternator = Alternator.new("/engines/engine/rpm",250.0,12.0,30.0);
 
 #####################################
 setlistener("/sim/signals/fdm-initialized", func {
@@ -230,6 +230,8 @@ var electrical_bus = func(){
         OutPuts.getNode("fuel-pump",1).setValue(0.0);
     }
     
+   
+    
   
 
     if (props.globals.getNode("/controls/engines/engine[0]/starter").getBoolValue()){
@@ -259,13 +261,36 @@ var avionics_bus = func() {
 #    OutPuts.getNode("comm[0]",1).setValue(bus_volts);
 #    OutPuts.getNode("comm[1]",1).setValue(bus_volts);
 
-  setprop("/systems/electrical/outputs/nav[1]", bus_volts);
-  setprop("/systems/electrical/outputs/comm[1]", bus_volts);
+  setprop("/systems/electrical/outputs/nav[0]", bus_volts);
+  setprop("/systems/electrical/outputs/comm[0]", bus_volts);
  
   if(bus_volts > 0) {  #if there is power then turn on the radios
-     setprop("/sim/model/c172p/lighting/comm1-power",  DIMMER.getValue());
+     setprop("systems/electrical/outputs/comm[0]",  1);
+      
+      if(getprop("sim/model/r44/controls/lighting/nav-lights") == 1) {
+            setprop("controls/lighting/nav-lights",1);
+      } else {
+       setprop("controls/lighting/nav-lights",0);
+      }
+       if(getprop("sim/model/r44/controls/lighting/beacon") == 1) {
+            setprop("controls/lighting/beacon",1);
+      } else {
+       setprop("controls/lighting/beacon",0);
+      }
+      if(getprop("sim/model/r44/use-landing-light") == 1) {
+            setprop("/sim/rendering/als-secondary-lights/use-landing-light",1);
+      } else {
+       setprop("/sim/rendering/als-secondary-lights/use-landing-light",0);
+      }
+      
+      
+     
   } else {
-     setprop("/sim/model/c172p/lighting/comm1-power", 0);
+     setprop("systems/electrical/outputs/comm[0]", 0);
+      setprop("controls/lighting/nav-lights",0);
+      setprop("controls/lighting/beacon",0);
+       setprop("/sim/rendering/als-secondary-lights/use-landing-light",0);
+     
   }
  
 

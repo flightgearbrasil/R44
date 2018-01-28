@@ -29,6 +29,7 @@ setlistener("/sim/signals/fdm-initialized", func {
     splash_vec_loop();
     setprop("sim/model/sound/volume", 0.5);
     setprop("/instrumentation/doors/Rcrew/position-norm",1);
+    setprop("controls/engines/engine[0]/mixture",0);
     
     # COMM1 (according to its documentation)
 aircraft.data.add(
@@ -49,8 +50,9 @@ aircraft.data.add(
     "instrumentation/nav[0]/radials/selected-deg",
 );
  setprop("/r44/engines/engine[0]/mp-pressure",1);
-  setprop("/sim/model/r44/gps-visible",1);
-   setprop("/sim/model/r44/cluthLight",0);
+setprop("/sim/model/r44/gps-visible",1);
+setprop("sim/model/r44/tv",0);
+setprop("/sim/model/r44/cluthLight",0);
 
 # mhab merged from woolthread.nas
 # Simple vibrating yawstring
@@ -90,6 +92,55 @@ setlistener("/controls/lighting/instruments-norm", func {
 
     setprop("controls/lighting/radio-norm",light);
 });
+
+setlistener("sim/model/r44/remove-door-rr", func {
+   var weight = getprop("yasim/gross-weight-lbs");
+   
+   if(getprop("sim/model/r44/remove-door-rr") == 1) {
+        setprop("yasim/gross-weight-lbs",weight-7);
+  
+   } else {
+        setprop("yasim/gross-weight-lbs",weight+7);
+   }
+   
+});
+
+#subtract the weight of the doors if they are removed
+setlistener("sim/model/r44/remove-door-rf", func {
+     var weight = getprop("yasim/gross-weight-lbs");
+   
+   if(getprop("sim/model/r44/remove-door-rf") == 1) {
+        setprop("yasim/gross-weight-lbs",weight-7.5);
+  
+   } else {
+        setprop("yasim/gross-weight-lbs",weight+7.5);
+   }
+});
+
+setlistener("sim/model/r44/remove-door-lr", func {
+     var weight = getprop("yasim/gross-weight-lbs");
+   
+   if(getprop("sim/model/r44/remove-door-lr") == 1) {
+        setprop("yasim/gross-weight-lbs",weight-7);
+  
+   } else {
+        setprop("yasim/gross-weight-lbs",weight+7);
+   }
+});
+
+setlistener("sim/model/r44/remove-door-lf", func {
+    var weight = getprop("yasim/gross-weight-lbs");
+   
+   if(getprop("sim/model/r44/remove-door-lf") == 1) {
+        setprop("yasim/gross-weight-lbs",weight-7.5);
+  
+   } else {
+        setprop("yasim/gross-weight-lbs",weight+7.5);
+   }
+});
+
+
+
 
 
 
@@ -148,6 +199,7 @@ setlistener("/sim/model/start-idling", func(idle){
 
 var Startup = func {
   setprop("/controls/electric/battery-switch",1);
+  setprop("controls/engines/engine[0]/mixture",1);
   setprop("/controls/electric/engine/generator",1);
   setprop("/controls/electric/key",4);
   setprop("/engines/engine/rpm",2700);
@@ -156,6 +208,7 @@ var Startup = func {
 }
 
 var Shutdown = func {
+  setprop("controls/engines/engine[0]/mixture",0);
   setprop("/controls/electric/battery-switch",0);
   setprop("/controls/electric/engine/generator",0);
   setprop("/controls/electric/key",0);
@@ -179,6 +232,7 @@ var kill_engine=func{
         setprop("/controls/engines/engine/magnetos",0);
         setprop("/engines/engine/clutch-engaged",0);
         setprop("/engines/engine/running",0);
+        setprop("/engines/engine/rpm",0);
         start_timer=0;
 }
 
@@ -275,10 +329,7 @@ var update_systems = func {
             }
             interpolate("/engines/engine/rpm", 2700 * throttle, 0.8);
         } else {
-            if(!getprop("/controls/engines/engine/generator") and getprop("/engines/engine/amp-v") < 2){
-            setprop("/engines/engine/clutch-engaged",0);
-            setprop("/engines/engine/running",0);
-            }
+          
         }
 	}else{
 	interpolate("oilpressure",0,0.6);
@@ -291,7 +342,13 @@ var update_systems = func {
 	}
 	
 	if(getprop("/consumables/fuel/total-fuel-lbs") == 0) {
-          setprop("/engines/engine/running",0);
+           kill_engine();
+	}
+	if(getprop("controls/engines/engine[0]/mixture") < 0.6) {
+      kill_engine();
+	}
+	if(getprop("/controls/electric/key") == 0) {
+        kill_engine();
 	}
 	
 	settimer(update_systems,0);
@@ -311,7 +368,7 @@ var splash_vec_loop = func(){
 
     var splash_x = -0.1 - 2 * airspeed;
     var splash_y = 0.0;
-    var splash_z = 1.0 - 1.35 * airspeed;
+    var splash_z = -1*(1.0 - 1.35 * airspeed);
 
     setprop("/environment/aircraft-effects/splash-vector-x", splash_x);
     setprop("/environment/aircraft-effects/splash-vector-y", splash_y);

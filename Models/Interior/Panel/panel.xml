@@ -108,17 +108,45 @@
     <pitch-deg> -65 </pitch-deg>
   </offsets>
 </model>
-
 <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/Mixture/Mixture.xml</path>
+    <offsets>
+        <x-m> 0.090 </x-m>
+        <y-m> 0.071 </y-m>    
+        <z-m>  -0.070 </z-m>
+        <pitch-deg> -30 </pitch-deg>
+    </offsets>
+    </model>
+    
+    <model>
+    <path>Aircraft/R44/Models/Interior/Panel/Instruments/AirVent/AirVent.xml</path>
+    <offsets>
+        <x-m> 0.080 </x-m>
+        <y-m> -0.074 </y-m>    
+        <z-m>  -0.080 </z-m>
+        <pitch-deg> -30 </pitch-deg>
+    </offsets>
+    </model>
+
+ <model>
   <path>Aircraft/R44/Models/Interior/Panel/Instruments/kma20/kma20.xml</path>
   <offsets>
     <x-m> 0.102 </x-m>
     <y-m> -0.005 </y-m>    
-    <z-m>  -0.089 </z-m>
+    <z-m>  -0.099 </z-m>
+    <pitch-deg> -30 </pitch-deg>
+  </offsets>
+    </model> 
+
+    <model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/kx165/kx165-1.xml</path>
+  <offsets>
+    <x-m> 0.129 </x-m>
+    <y-m> -0.005 </y-m>
+    <z-m>  -0.154 </z-m>
     <pitch-deg> -30 </pitch-deg>
   </offsets>
 </model>
-
 
 <model>
   <path>Aircraft/R44/Models/Interior/Panel/Instruments/kt76a/kt76a.xml</path>
@@ -130,15 +158,7 @@
   </offsets>
 </model>
 
-<model>
-  <path>Aircraft/R44/Models/Interior/Panel/Instruments/kx165/kx165-2.xml</path>
-  <offsets>
-    <x-m> 0.129 </x-m>
-    <y-m> -0.005 </y-m>
-    <z-m>  -0.144 </z-m>
-    <pitch-deg> -30 </pitch-deg>
-  </offsets>
-</model>
+
 
 <model>
   <path>Aircraft/R44/Models/Interior/Panel/Instruments/alt/alt.xml</path>
@@ -277,7 +297,7 @@
 <animation>
   <type>rotate</type>
   <object-name>Llight.switch</object-name>
-  <property>/sim/rendering/als-secondary-lights/use-landing-light</property>
+  <property>sim/model/r44/use-landing-light</property>
   <factor>30</factor>
   <center>
     <x-m>0.270</x-m>
@@ -302,7 +322,7 @@
     </binding>
     <binding>
       <command>property-toggle</command>
-      <property>/sim/rendering/als-secondary-lights/use-landing-light</property>
+      <property>sim/model/r44/use-landing-light</property>
       
       
     </binding>
@@ -412,14 +432,66 @@
 </model>
 
 <model>
-  <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/alternator.xml</path>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/generic.xml</path>
   <offsets>
-    <x-m> -0.110 </x-m>
-    <y-m> 0.007 </y-m>
-    <z-m> 0.034 </z-m>
+    <x-m> -0.107 </x-m>
+    <y-m> 0.070 </y-m>
+    <z-m> 0.033 </z-m>
     <pitch-deg> -65 </pitch-deg>
   </offsets>
 </model>
+
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/generic.xml</path>
+  <offsets>
+    <x-m> -0.107 </x-m>
+    <y-m> 0.057 </y-m>
+    <z-m> 0.033 </z-m>
+    <pitch-deg> -65 </pitch-deg>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/generic.xml</path>
+  <offsets>
+    <x-m> -0.107 </x-m>
+    <y-m> 0.045 </y-m>
+    <z-m> 0.033 </z-m>
+    <pitch-deg> -65 </pitch-deg>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/alternator.xml</path>
+  <offsets>
+    <x-m> -0.107 </x-m>
+    <y-m> 0.028 </y-m>
+    <z-m> 0.033 </z-m>
+    <pitch-deg> -65 </pitch-deg>
+  </offsets>
+</model>
+
+
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/generic.xml</path>
+  <offsets>
+    <x-m> -0.107 </x-m>
+    <y-m> 0.013 </y-m>
+    <z-m> 0.033 </z-m>
+    <pitch-deg> -65 </pitch-deg>
+  </offsets>
+</model>
+
+<model>
+  <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/generic.xml</path>
+  <offsets>
+    <x-m> -0.107 </x-m>
+    <y-m> -0.005 </y-m>
+    <z-m> 0.033 </z-m>
+    <pitch-deg> -65 </pitch-deg>
+  </offsets>
+</model>
+
 
 <model>
   <path>Aircraft/R44/Models/Interior/Panel/Instruments/lamps/clutch.xml</path>
@@ -532,6 +604,7 @@
     <pitch-deg> -65 </pitch-deg>
   </offsets>
 </model>
+
 
 <model>
   <path>Aircraft/R44/Models/Interior/Panel/Instruments/switch/master-batt.xml</path>
