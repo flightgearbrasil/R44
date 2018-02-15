@@ -21,50 +21,42 @@
      nx="0.05" ny="0" nz="1"
      fx="0.99" fy="0" fz="-0.043" 
      ccw="1"
-     phi0="45"
-     maxcollective="17"
-     mincollective="0.3"
-     mincyclicele="-9.5"
-     maxcyclicele="9.5"
-     mincyclicail="-2.5"
-     maxcyclicail="2.7"
-     diameter="10.1"
-     numblades="2"
-     weightperblade="60"
-     relbladecenter="0.5"
-     dynamic="1"
-     rpm="495"
-     rellenflaphinge="0.2"
-     delta3="0.0"
-     delta=".25"
-     pitch-a="10"
-     pitch-b="15"
-     flapmin="-13.0"
-     flapmax="13.0"
-     flap0="-2.0"
-     flap0factor="0"
-     notorque="0"
-     dragfactor="0.30"
-     translift-ve="20"
-     translift-maxfactor="0.7"
-     ground-effect-constant="0.1"
-     twist="-8.5"
-     taper="1"
-     chord="0.18288"
-     number-of-segments="8"
-     number-of-parts="8"
-     rel-len-where-incidence-is-measured="0.7"
-     rel-len-blade-start="0.04"
-     airfoil-lift-coefficient="5.67"
-     airfoil-drag-coefficient0="0.01"
-     airfoil-drag-coefficient1="0.05"
-     incidence-stall-zero-speed="19"
-     incidence-stall-half-sonic-speed="10"
-     lift-factor-stall="0.18"
-     stall-change-over="5.5"
-     drag-factor-stall="2.0"
-     cyclic-factor="1.0"
-     rotor-correction-factor="0.9">
+    maxcollective="15" mincollective="0.0"
+    mincyclicele="-9" maxcyclicele="11"
+    mincyclicail="-9.5" maxcyclicail="6.0"
+    diameter="10.1" numblades="2" weightperblade="40" relbladecenter="0.51"
+    dynamic="0.95" rpm="425" rellenflaphinge="0.02" delta3="0.5"
+    delta=".25"
+    pitch-a="10"
+    pitch-b="15"
+    flapmin="-5"
+    flapmax="15"
+    flap0="-5"
+    phi0="1"
+    flap0factor="0"
+    notorque="0"
+    dragfactor="0.30"
+    translift-ve="30"
+    translift-maxfactor="0.55"
+    ground-effect-constant="0.2"
+    twist="-6"
+    taper="1"
+    chord="0.25"
+    number-of-segments="8"
+    number-of-parts="8"
+    rel-len-where-incidence-is-measured="0.75"
+    rel-len-blade-start="0.002"
+    airfoil-lift-coefficient="5.5"
+    airfoil-drag-coefficient0="0.001"
+    airfoil-drag-coefficient1="0.05"
+    incidence-stall-zero-speed="18.0"
+    incidence-stall-half-sonic-speed="15.0"
+    lift-factor-stall="0.15"
+    stall-change-over="5.5"
+    drag-factor-stall="4.0"
+    cyclic-factor="0.60"
+    rotor-correction-factor="0.95"
+           downwashfactor="0.25">
      <control-input axis="/controls/flight/aileron-trim" control="CYCLICAIL" split="true"/>
      <control-input axis="/controls/flight/fcs/roll" control="CYCLICAIL" src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/>
      <control-input axis="/controls/flight/elevator-trim" control="CYCLICELE" split="true"/>
@@ -74,11 +66,11 @@
 
    <rotor name="tail"
      x="-3.609" y="0.362" z="0.395"
-     nx="0.0" ny="-1" nz="0.0"
+     nx="0.0" ny="1" nz="0.0"
      fx="1" fy="0" fz="0"
      ccw="1"
-     maxcollective="24"
-     mincollective="-5"
+     maxcollective="-5"
+     mincollective="24"
      diameter="1.47"
      numblades="2"
      weightperblade="1"
@@ -90,9 +82,9 @@
      translift="0" delta="0.8"
      pitch-a="10"
      pitch-b="15"
-     airfoil-lift-coefficient="6.4"
+     airfoil-lift-coefficient="6.5"
      airfoil-drag-coefficient0="0.0035"
-     airfoil-drag-coefficient1="0.10"
+     airfoil-drag-coefficient1="0.1"
      incidence-stall-zero-speed="19.25"
      incidence-stall-half-sonic-speed="10.5"
      lift-factor-stall="0.26"
@@ -106,17 +98,17 @@
      rel-len-blade-start="0.2"
      rotor-correction-factor="0.9"
      downwashfactor="0.3">
-     <control-input axis="/controls/flight/fcs/yaw" control="COLLECTIVE" invert="true" src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/>
-     <control-input axis="/controls/flight/fcs/tail-rotor/throttle" control="COLLECTIVE" src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/>
+     <control-input axis="/controls/flight/fcs/yaw" control="COLLECTIVE" invert="false" src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/>
+     <control-input axis="/controls/flight/fcs/tail-rotor/throttle" invert="true" control="COLLECTIVE" src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/>
    </rotor>
 
-   <rotorgear max-power-engine="380"
+   <rotorgear max-power-engine="183"
      max-power-rotor-brake="50"
-     rotorgear-friction="0.5"
+     rotorgear-friction="0.2"
      engine-prop-factor="0.005"
      engine-accel-limit="3"
-     yasimdragfactor="10"
-     yasimliftfactor="140">
+    yasimdragfactor="2.5"
+              yasimliftfactor="170">
      <!--<control-input axis="/controls/engines/engine[0]/magnetos" control="ROTORGEARENGINEON"/>-->
      <control-input axis="/engines/engine/clutch-engaged" control="ROTORGEARENGINEON"/>
      <control-input axis="/controls/rotor/brake" control="ROTORBRAKE" src0="0.0" src1="1.0" dst0="0.0" dst1="1.0"/>
@@ -217,12 +209,12 @@
   <tank x="4" y="0" z="-0.31" capacity="189.6"/>
   <tank x="4" y="0" z="-0.31" capacity="111"/>
 
-  <weight x="0.5588" y=" 0.270" z="-1.8" mass-prop="/sim/weight[0]/weight-lb"/> <!-- left seat  -->
-  <weight x="0.5588" y="-0.236" z="-1.8" mass-prop="/sim/weight[1]/weight-lb"/> <!-- right seat -->
+  <weight x="3.5" y=" 0.270" z="-1.8" mass-prop="/sim/weight[0]/weight-lb"/> <!-- left seat  -->
+  <weight x="3.5" y="-0.236" z="-1.8" mass-prop="/sim/weight[1]/weight-lb"/> <!-- right seat -->
 
-  <ballast x="3" y=" 0.0" z="-0.5" mass="450"/>
-  <ballast x="2" y=" 1.1" z=" 1.1" mass="100"/>
-  <ballast x="2" y="-1.1" z=" 1.1" mass="50"/>
+  <ballast x="0.8" y=" 0.0" z="-0.5" mass="450"/>
+  <ballast x="2.1" y=" 1.1" z=" 1.1" mass="100"/>
+  <ballast x="2" y="-1.1" z=" 1.1" mass="50"/> 
 
   <thruster x="-0.75"  y="0" z="0" vx="-1" vy="0" vz="1" thrust="850">
     <control-input axis="/sim/model/pushback/target-speed-fps" control="THROTTLE" src0="-1" src1="1" dst0="-1" dst1="1"/>
