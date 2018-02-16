@@ -36,7 +36,7 @@
     flap0factor="0"
     notorque="0"
     dragfactor="0.30"
-    translift-ve="30"
+    translift-ve="40"
     translift-maxfactor="0.55"
     ground-effect-constant="0.2"
     twist="-6"
@@ -70,7 +70,7 @@
      fx="1" fy="0" fz="0"
      ccw="1"
      maxcollective="-5"
-     mincollective="24"
+     mincollective="13"
      diameter="1.47"
      numblades="2"
      weightperblade="1"
@@ -98,8 +98,8 @@
      rel-len-blade-start="0.2"
      rotor-correction-factor="0.9"
      downwashfactor="0.3">
-     <control-input axis="/controls/flight/fcs/yaw" control="COLLECTIVE" invert="false" src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/>
-     <control-input axis="/controls/flight/fcs/tail-rotor/throttle" invert="true" control="COLLECTIVE" src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/>
+     <control-input axis="/controls/flight/fcs/yaw" control="COLLECTIVE" invert="true" src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/>
+     <control-input axis="/controls/flight/fcs/tail-rotor/throttle" invert="false" control="COLLECTIVE" src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/>
    </rotor>
 
    <rotorgear max-power-engine="183"
@@ -107,7 +107,7 @@
      rotorgear-friction="0.2"
      engine-prop-factor="0.005"
      engine-accel-limit="3"
-    yasimdragfactor="2.5"
+    yasimdragfactor="2.6"
               yasimliftfactor="170">
      <!--<control-input axis="/controls/engines/engine[0]/magnetos" control="ROTORGEARENGINEON"/>-->
      <control-input axis="/engines/engine/clutch-engaged" control="ROTORGEARENGINEON"/>
@@ -212,7 +212,7 @@
   <weight x="3.5" y=" 0.270" z="-1.8" mass-prop="/sim/weight[0]/weight-lb"/> <!-- left seat  -->
   <weight x="3.5" y="-0.236" z="-1.8" mass-prop="/sim/weight[1]/weight-lb"/> <!-- right seat -->
 
-  <ballast x="0.8" y=" 0.0" z="-0.5" mass="450"/>
+  <ballast x="0.75" y=" 0.0" z="-0.5" mass="450"/>
   <ballast x="2.1" y=" 1.1" z=" 1.1" mass="100"/>
   <ballast x="2" y="-1.1" z=" 1.1" mass="50"/> 
 
