@@ -107,7 +107,7 @@
      rotorgear-friction="0.2"
      engine-prop-factor="0.005"
      engine-accel-limit="3"
-    yasimdragfactor="7.5"
+    yasimdragfactor="12"
               yasimliftfactor="170">
      <!--<control-input axis="/controls/engines/engine[0]/magnetos" control="ROTORGEARENGINEON"/>-->
      <control-input axis="/engines/engine/clutch-engaged" control="ROTORGEARENGINEON"/>
