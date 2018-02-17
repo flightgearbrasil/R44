@@ -21,11 +21,11 @@
      nx="0.05" ny="0" nz="1"
      fx="0.99" fy="0" fz="-0.043" 
      ccw="1"
-    maxcollective="15" mincollective="0.0"
+    maxcollective="16" mincollective="0.0"
     mincyclicele="-9" maxcyclicele="11"
     mincyclicail="-9.5" maxcyclicail="6.0"
     diameter="10.1" numblades="2" weightperblade="40" relbladecenter="0.51"
-    dynamic="0.95" rpm="425" rellenflaphinge="0.02" delta3="0.5"
+    dynamic="0.95" rpm="404" rellenflaphinge="0.02" delta3="0.5"
     delta=".25"
     pitch-a="10"
     pitch-b="15"
@@ -41,7 +41,7 @@
     ground-effect-constant="0.2"
     twist="-6"
     taper="1"
-    chord="0.25"
+    chord="0.254"
     number-of-segments="8"
     number-of-parts="8"
     rel-len-where-incidence-is-measured="0.75"
@@ -69,9 +69,9 @@
      nx="0.0" ny="1" nz="0.0"
      fx="1" fy="0" fz="0"
      ccw="1"
-     maxcollective="-5"
+     maxcollective="-10"
      mincollective="13"
-     diameter="1.47"
+     diameter="1.4732"
      numblades="2"
      weightperblade="1"
      relbladecenter="0.55"
@@ -107,8 +107,8 @@
      rotorgear-friction="0.2"
      engine-prop-factor="0.005"
      engine-accel-limit="3"
-    yasimdragfactor="12"
-              yasimliftfactor="170">
+     yasimdragfactor="5.2"
+     yasimliftfactor="190">
      <!--<control-input axis="/controls/engines/engine[0]/magnetos" control="ROTORGEARENGINEON"/>-->
      <control-input axis="/engines/engine/clutch-engaged" control="ROTORGEARENGINEON"/>
      <control-input axis="/controls/rotor/brake" control="ROTORBRAKE" src0="0.0" src1="1.0" dst0="0.0" dst1="1.0"/>
@@ -206,15 +206,15 @@
     dfric="1">
   </gear>
 
-  <tank x="4" y="0" z="-0.31" capacity="189.6"/>
-  <tank x="4" y="0" z="-0.31" capacity="111"/>
+  <tank x="2.2" y="0" z="-0.31" capacity="189.6"/>
+  <tank x="2.2" y="0" z="-0.31" capacity="111"/>
 
-  <weight x="3.5" y=" 0.270" z="-1.8" mass-prop="/sim/weight[0]/weight-lb"/> <!-- left seat  -->
-  <weight x="3.5" y="-0.236" z="-1.8" mass-prop="/sim/weight[1]/weight-lb"/> <!-- right seat -->
+  <weight x="3.2" y=" 0.270" z="-1.8" mass-prop="/sim/weight[0]/weight-lb"/> <!-- left seat  -->
+  <weight x="3.2" y="-0.236" z="-1.8" mass-prop="/sim/weight[1]/weight-lb"/> <!-- right seat -->
 
-  <ballast x="0.75" y=" 0.0" z="-0.5" mass="450"/>
-  <ballast x="2.1" y=" 1.1" z=" 1.1" mass="100"/>
-  <ballast x="2" y="-1.1" z=" 1.1" mass="50"/> 
+  <ballast x="2.2" y=" 0.0" z="-0.5" mass="450"/>
+  <ballast x="3.2" y=" 1.1" z=" 1.1" mass="100"/>
+  <ballast x="-3.2" y="-1.1" z=" 1.1" mass="50"/> 
 
   <thruster x="-0.75"  y="0" z="0" vx="-1" vy="0" vz="1" thrust="850">
     <control-input axis="/sim/model/pushback/target-speed-fps" control="THROTTLE" src0="-1" src1="1" dst0="-1" dst1="1"/>

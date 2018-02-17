@@ -313,6 +313,8 @@ var update_systems = func {
 	interpolate("oiltemp",24,20);
 	
 	var engineTrottle = getprop("/controls/engines/engine/throttle"); #mp gauge based on throttle
+	
+	print("trottle: ",engineTrottle);
     
      interpolate("/r44/engines/engine[0]/mp-pressure", (engineTrottle*0.44) + 0.45, 0.9);
     
