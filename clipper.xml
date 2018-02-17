@@ -144,6 +144,87 @@
      dihedral="180">
      <stall aoa="0" width="0" peak="1.5"/>
    </hstab>
+   
+   <!-- Centre -->
+  <gear x="2.664" y="0.982" z="-1.651" 
+        compression="1.2"  
+        spring="20" 
+        damp="8" 
+        sfric="0.4" 
+        dfric="0.3" 
+        on-water="1" 
+        on-solid="0"
+        ignored-by-solver="1"
+        reduce-friction-by-extension="1.0"
+        speed-planing="25" 
+        spring-factor-not-planing="0.2">
+        <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
+  </gear>
+
+  <!-- Arrière -->
+  <gear x="0.451" y="0.982" z="-1.651" 
+        compression="1.2"  
+        spring="30" 
+        damp="8" 
+        sfric="0.4" 
+        dfric="0.3" 
+        on-water="1" 
+        on-solid="0"
+        ignored-by-solver="1"
+        reduce-friction-by-extension="1.0"
+        speed-planing="25" 
+        spring-factor-not-planing="0.2">
+        <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
+  </gear>
+
+  <!-- droite -->
+  <!-- Avant -->
+  <gear x="4.476" y="-0.982" z="-1.651" 
+        compression="1.2"  
+        spring="20" 
+        damp="8" 
+        sfric="0.4" 
+        dfric="0.3" 
+        on-water="1" 
+        on-solid="0"
+        ignored-by-solver="1"
+        reduce-friction-by-extension="1.0"
+        speed-planing="25" 
+        spring-factor-not-planing="0.2">
+        <control-output control="EXTEND" prop="/gear/gear[3]/position-norm"/>
+  </gear>
+
+  <!-- Centre -->
+  <gear x="2.664" y="-0.982" z="-1.651" 
+        compression="1.2"  
+        spring="20" 
+        damp="8" 
+        sfric="0.4" 
+        dfric="0.3" 
+        on-water="1" 
+        on-solid="0"
+        ignored-by-solver="1"
+        reduce-friction-by-extension="1.0"
+        speed-planing="25" 
+        spring-factor-not-planing="0.2">
+        <control-output control="EXTEND" prop="/gear/gear[4]/position-norm"/>
+  </gear>
+
+  <!-- Arrière -->
+  <gear x="0.451" y="-0.982" z="-1.651"
+        compression="1.2"  
+        spring="30" 
+        damp="8" 
+        sfric="0.4" 
+        dfric="0.3" 
+        on-water="1" 
+        on-solid="0"
+        ignored-by-solver="1"
+        reduce-friction-by-extension="1.0"
+        speed-planing="25" 
+        spring-factor-not-planing="0.2">
+        <control-output control="EXTEND" prop="/gear/gear[5]/position-norm"/>
+  </gear>
 
    <!-- Avant gauche -->
    <gear x="3.603" y="1.043" z="-1.7" 
