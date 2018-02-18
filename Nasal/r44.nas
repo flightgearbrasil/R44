@@ -273,7 +273,7 @@ var update_systems = func {
 	if(getprop("/rotors/main/rpm") > 525)RPM_arm.setBoolValue(1);
 	}
 	
-	if(getprop("/rotors/main/rpm") > 475) {
+	if(getprop("/rotors/main/rpm") > 400 ) {
          setprop("/sim/model/r44/cluthLight",0);
 	}
 	
