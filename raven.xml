@@ -6,7 +6,7 @@
      2011 JM-26 First really R44 FDM
    -->
 
-   <airplane mass="1424">
+   <airplane mass="1510">
 
     <approach speed="47" aoa="16">
       <control-setting axis="/controls/engines/engine[0]/throttle" value="0.3"/>
@@ -107,7 +107,7 @@
      rotorgear-friction="0.2"
      engine-prop-factor="0.005"
      engine-accel-limit="3"
-     yasimdragfactor="5.2"
+     yasimdragfactor="9"
      yasimliftfactor="190">
      <!--<control-input axis="/controls/engines/engine[0]/magnetos" control="ROTORGEARENGINEON"/>-->
      <control-input axis="/engines/engine/clutch-engaged" control="ROTORGEARENGINEON"/>
@@ -206,13 +206,13 @@
     dfric="1">
   </gear>
 
-  <tank x="2.2" y="0" z="-0.31" capacity="189.6"/>
-  <tank x="2.2" y="0" z="-0.31" capacity="111"/>
+  <tank x="2.066" y="0" z="-0.31" capacity="189.6"/>
+  <tank x="2.167" y="0" z="-0.31" capacity="111"/>
 
-  <weight x="3.2" y=" 0.270" z="-1.8" mass-prop="/sim/weight[0]/weight-lb"/> <!-- left seat  -->
-  <weight x="3.2" y="-0.236" z="-1.8" mass-prop="/sim/weight[1]/weight-lb"/> <!-- right seat -->
+  <weight x="3.5" y=" 0.270" z="-1.8" mass-prop="/sim/weight[0]/weight-lb"/> <!-- left seat  -->
+  <weight x="3.5" y="-0.236" z="-1.8" mass-prop="/sim/weight[1]/weight-lb"/> <!-- right seat -->
 
-  <ballast x="2.2" y=" 0.0" z="-0.5" mass="450"/>
+  <ballast x="2.95" y=" 0.0" z="-0.5" mass="450"/>
   <ballast x="3.2" y=" 1.1" z=" 1.1" mass="100"/>
   <ballast x="-3.2" y="-1.1" z=" 1.1" mass="50"/> 
 
