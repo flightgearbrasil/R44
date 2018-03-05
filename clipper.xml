@@ -16,7 +16,7 @@
       <control-setting axis="/controls/engines/engine[0]/throttle" value="1.0"/>
     </cruise>
 
-    <rotor name="main" 
+     <rotor name="main" 
      x="2.218" y="0.0" z="1.605" 
      nx="0.05" ny="0" nz="1"
      fx="0.99" fy="0" fz="-0.043" 
@@ -107,8 +107,8 @@
      rotorgear-friction="0.2"
      engine-prop-factor="0.005"
      engine-accel-limit="3"
-     yasimdragfactor="9"
-     yasimliftfactor="190">
+     yasimdragfactor="11"
+     yasimliftfactor="180">
      <!--<control-input axis="/controls/engines/engine[0]/magnetos" control="ROTORGEARENGINEON"/>-->
      <control-input axis="/engines/engine/clutch-engaged" control="ROTORGEARENGINEON"/>
      <control-input axis="/controls/rotor/brake" control="ROTORBRAKE" src0="0.0" src1="1.0" dst0="0.0" dst1="1.0"/>
