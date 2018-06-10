@@ -20,7 +20,7 @@
     </sound>
 
     <model>
-      <path archive="y">Aircraft/R44/Models/raven.xml</path>
+      <path archive="y">Aircraft/R44/Models/R44-R2.xml</path>
       <livery>
         <file type="string">default</file>
       </livery>
