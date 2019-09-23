@@ -273,7 +273,7 @@ var update_systems = func {
 	if(getprop("/rotors/main/rpm") > 525)RPM_arm.setBoolValue(1);
 	}
 	
-	if(getprop("/rotors/main/rpm") > 400 ) {
+	if(getprop("/rotors/main/rpm") > 475) {
          setprop("/sim/model/r44/cluthLight",0);
 	}
 	
@@ -313,8 +313,6 @@ var update_systems = func {
 	interpolate("oiltemp",24,20);
 	
 	var engineTrottle = getprop("/controls/engines/engine/throttle"); #mp gauge based on throttle
-	
-	print("trottle: ",engineTrottle);
     
      interpolate("/r44/engines/engine[0]/mp-pressure", (engineTrottle*0.44) + 0.45, 0.9);
     

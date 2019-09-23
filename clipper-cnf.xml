@@ -19,7 +19,7 @@
     </sound>
 
     <model>
-      <path archive="y">Aircraft/R44/Models/R44-C.xml</path>
+      <path archive="y">Aircraft/R44/Models/clipper.xml</path>
       <livery>
         <file type="string">default</file>
       </livery>
