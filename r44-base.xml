@@ -191,5 +191,13 @@
   </r44>
 </nasal>
 
+<R44>
+  <rendering>
+    <refl-type type="double">2</refl-type>
+    <refl_correction type="double">0</refl_correction>
+    <fresnel-factor type="double">.6</fresnel-factor>
+  </rendering>
+</R44>
+
 </PropertyList>
 

@@ -67,13 +67,17 @@
   </animation>
 
   <effect>
-    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <inherits-from>Aircraft/R44/Models/Effects/ec135/ec135bumpspecreflectfuselage</inherits-from>
     <condition>
       <not><property>sim/rendering/rembrandt/enabled</property></not>
     </condition>
     <object-name>fuselage</object-name>
     <object-name>patins</object-name>
-    <object-name>supportlampe</object-name>
+    <object-name>porteAG</object-name>
+    <object-name>porteAD</object-name>
+    <object-name>porteBG</object-name>
+    <object-name>porteBD</object-name>
+    <!--object-name>supportlampe</object-name>
     <object-name>protection</object-name>
     <object-name>porteAG</object-name>
     <object-name>porteAD</object-name>
@@ -81,9 +85,29 @@
     <object-name>porteBD</object-name>
     <object-name>pate</object-name>
     <object-name>derive</object-name>
-    <object-name>lights</object-name>
+    <object-name>lights</object-name-->
   </effect>
 
+  <effect>
+    <inherits-from>Aircraft/R44/Models/Effects/ec135/ec135reflectglas-uber</inherits-from>
+    <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
+    <object-name>windshield</object-name>
+    <object-name>windowRR</object-name>
+    <object-name>windowRL</object-name>
+    <object-name>windowFR</object-name>
+     <object-name>windowFL</object-name>
+    <!--object-name>supportlampe</object-name>
+    <object-name>protection</object-name>
+    <object-name>porteAG</object-name>
+    <object-name>porteAD</object-name>
+    <object-name>porteBG</object-name>
+    <object-name>porteBD</object-name>
+    <object-name>pate</object-name>
+    <object-name>derive</object-name>
+    <object-name>lights</object-name-->
+  </effect>
 
   <effect>
     <inherits-from>Effects/model-combined-deferred</inherits-from>
@@ -108,11 +132,6 @@
     <type>shader</type>
     <shader>chrome</shader>
     <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <object-name>windshield</object-name>
-    <object-name>windowRR</object-name>
-    <object-name>windowRL</object-name>
-    <object-name>windowFR</object-name>
-     <object-name>windowFL</object-name>
   </animation>
   
   
@@ -215,8 +234,8 @@
     <path>Aircraft/R44/Models/TailRotor/tailrotor.xml</path>
     <offsets>
       <x-m>  3.609 </x-m>
-      <y-m> -0.247 </y-m>
-      <z-m>  0.395 </z-m>
+      <y-m> -0.200 </y-m>
+      <z-m>  0.340 </z-m>
       <roll-deg>   90 </roll-deg>
     </offsets>
   </model>
@@ -413,6 +432,15 @@
       <x-m> -3.361 </x-m>
       <y-m> -0.588 </y-m>
       <z-m> -0.983 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/R44/Models/light/GreenLight 2.xml</path>
+    <offsets>
+      <x-m> 3.75 </x-m>
+      <y-m> 0.320 </y-m>
+      <z-m> 0.260 </z-m>
     </offsets>
   </model>
 

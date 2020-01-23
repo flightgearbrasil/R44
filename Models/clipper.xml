@@ -17,6 +17,10 @@
 
     crew_door.alias(float_0);
     passenger_door.alias(float_1);
+
+    setprop("/R44/rendering/refl_correction", 0);
+    setprop("/R44/rendering/refl-type", 2);
+    setprop("/R44/rendering/fresnel-factor", .6);
     ]]>
   </load>
 
